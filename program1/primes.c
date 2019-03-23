@@ -28,10 +28,10 @@ int local_primes(){
     return 0;
 }
 
-int main() {
-    printf("largest prime under %d: %d\n", 1000, primes(1000));
-    printf("largest prime under %d: %d\n", 64, primes(64));
-    printf("largest prime under %d: %d\n", 10000, primes(10000));
+int main(int argc, char** argv) {
+    int limit = atoi(argv[1]);
+
+    printf("largest prime from 1...%d: %d\n", limit, primes(limit));
 	
     return 0;
 }
