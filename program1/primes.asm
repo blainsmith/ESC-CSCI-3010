@@ -1,10 +1,11 @@
 ; Compiled with https://www.nasm.us
 ; > nasm -f elf64 addup_linux.asm -o addup.o
-%define ARRAY_SIZE 1001
+
+%define ARRAY_MAX_SIZE 1000
 
     SECTION .data
 
-primesArray: times ARRAY_SIZE dd 0
+primesArray: times ARRAY_MAX_SIZE dd 1
 
     SECTION .text
     
@@ -14,8 +15,13 @@ primesArray: times ARRAY_SIZE dd 0
 ; 
 ; The return value of the function is pulled from eax.
 primes:
-    mov edx, 0
+    ; Read the argument from the C program and error if it is greater than 1000
+    mov edi, [esp+4]
+    cmp edi, ARRAY_MAX_SIZE
+    jg error
 
+    ; Set the counter to zero
+    mov ecx, 0
 fill:
     mov [primesArray + edx * 4], edx
     inc edx
@@ -24,3 +30,6 @@ fill:
 
     mov eax, [primesArray + 1 * 4] ; move the result into the return register
     ret                            ; retrun the sum
+error:
+    mov eax, -1
+    ret
