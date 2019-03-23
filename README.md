@@ -1,5 +1,14 @@
 # ESC CSCI-3010: Computer Organization & Assembly Language
 
+## Requirements
+
+All programs were written, compiled, and tested on a 64-bit Intel CPU running Linux.
+
+- Intel 32/64-bit CPU
+- [NASM Assembler](https://www.nasm.us)
+- [GCC](https://gcc.gnu.org)
+- [Make](https://www.gnu.org/software/make)
+
 ## Program 1
 
 Write a procedure in i7 assembly language to find the largest prime less than 1000.  Use the Sieve of Eratosthenes algorithm, and appropriate address jumps when looping.  Embed it in a C or C++ program to do the I/O.
