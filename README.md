@@ -22,5 +22,14 @@ Write a procedure in i7 assembly language to find the largest prime less than 10
 
 ```
 > make primes
-> ./bin/primes
+> ./bin/primes 10
+```
+
+## Program 2
+
+Write a procedure in i7 assembly language to implement the Russian Peasant multiplication algorithm using shifting. Embed it in a C or C++ program to do the I/O.
+
+```
+> make rpm
+> ./bin/rpm 20 12
 ```
