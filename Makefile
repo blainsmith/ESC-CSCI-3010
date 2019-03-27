@@ -9,5 +9,5 @@ primes:
 rpm:
 	rm -fr ./bin && mkdir ./bin
 	nasm -f elf ./program2/rpm.asm -o ./bin/rpm.o
-	gcc -m32 -Wall -o ./bin/rpm ./program1/rpm.c ./bin/rpm.o
+	gcc -m32 -Wall -o ./bin/rpm ./program2/rpm.c ./bin/rpm.o
 	rm ./bin/rpm.o
