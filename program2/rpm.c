@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
     int a = atoi(argv[1]);
     int b = atoi(argv[2]);
 
-    printf("%d x %d: %d\n", a, b, local_rpm(a, b));
+    printf("%d x %d: %d\n", a, b, rpm(a, b));
 	
     return 0;
 }
