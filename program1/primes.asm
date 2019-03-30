@@ -12,8 +12,14 @@ primesArray: times ARRAY_MAX_SIZE dd 1
     global primes
 
 primes:
+    ; Set up the local stack and make room for a local variable
+    push ebp
+    mov ebp, esp
+    push edi
+    push esi
+
     ; Read the argument from the C program and error if it is greater than 1000
-    mov edi, [esp+4]
+    mov edi, [ebp+8]
     cmp edi, ARRAY_MAX_SIZE
     jg error
 
@@ -72,6 +78,10 @@ findLoop:
 
     ; The non-zero number is in eax which is the return register
     ; so just return from the function
+    pop esi
+    pop edi
+    mov esp, ebp
+    pop ebp
     ret
 
 error:
