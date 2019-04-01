@@ -21,10 +21,8 @@ whileLoop:
     ; Check if the second argument is odd
     ; if it is even skip right to bit shifting
     mov eax, esi
-    mov edx, 0
-    mov ecx, 2
-    div ecx
-    cmp edx, 0
+    and eax, 1
+    cmp eax, 0
     je shift
 
 accumulate:
