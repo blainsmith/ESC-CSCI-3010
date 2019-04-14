@@ -33,3 +33,12 @@ Write a procedure in i7 assembly language to implement the Russian Peasant multi
 > make rpm
 > ./bin/rpm 20 12
 ```
+
+## Program 3
+
+Write a procedure in i7 assembly language to accept a binary number of length less than or equal to 8, interpret it as a 2's complement number of 8 bits, and return the ASCII string for the number, suppressing the leading zeroes but printing either a `+` or `-` in front.  Examples: 00001111 or 1111 becomes +1111\0, 11001111 becomes -11001\0. Note:  the character `0` is 30 in hex or 48 in decimal.
+
+```
+> make binstring
+> ./bin/binstring 1111
+```
